@@ -5,7 +5,7 @@ Description: This plugin is used for Certificate Generation and checking if data
 Version: 4.0
 Author: Mohd Abid
 Author URI:  https://linkedin.com/in/mohd-abid/
-Plugin URI:  
+Plugin URI:  https://github.com/Abid1998/Certificate-Plugin-for-Wordpress
 */
 
 // Enqueue the CSS file
