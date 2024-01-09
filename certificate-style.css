@@ -1,0 +1,43 @@
+/* certificate-style.css */
+.from-Certificate{
+    width: 350px;
+    padding: 20px;
+}
+.from-Certificate input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.from-Certificate input[type="submit"] {
+    background-color: #0621a5;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 3px;
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
