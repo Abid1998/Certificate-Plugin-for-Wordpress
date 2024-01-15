@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Certificate Generator Plugin Created by Mohd Abid
 Description: This plugin is used for Certificate Generation and checking if database data exists. If database data exists, then a certificate is generated.
-Version: 4.0
+Version: 1.0
 Author: Mohd Abid
 Author URI:  https://linkedin.com/in/mohd-abid/
 Plugin URI:  https://github.com/Abid1998/Certificate-Plugin-for-Wordpress
@@ -91,6 +91,29 @@ function generate_certificate_form() {
     </form>
     <?php
     return ob_get_clean();
+}
+
+
+// Activation hook
+register_activation_hook(__FILE__, 'certificate_plugin_activation');
+
+function certificate_plugin_activation() {
+    global $wpdb;
+    $table_name = $wpdb->prefix . 'tblstcertificate';
+
+    $charset_collate = $wpdb->get_charset_collate();
+
+    $sql = "CREATE TABLE $table_name (
+        id mediumint(9) NOT NULL AUTO_INCREMENT,
+        Stid mediumint(9) NOT NULL,
+        name varchar(255) NOT NULL,
+        StDate date NOT NULL,
+        StPer decimal(5,2) NOT NULL,
+        PRIMARY KEY  (id)
+    ) $charset_collate;";
+
+    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+    dbDelta( $sql );
 }
 
 // Add action hooks
